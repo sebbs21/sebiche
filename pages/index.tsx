@@ -1,25 +1,47 @@
-import Head from "next/head";
-import Header from "../components/Header";
-import About from "../components/About";
-import Experience from "../components/Experience";
-import Footer from "../components/Footer";
+import Header from '../components/Header';
+import About from '../components/About';
+import Experience from '../components/Experience';
+import Projects from '../components/Projects';
+import Footer from '../components/Footer';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Portfolio de Sebiche</title>
-        <meta name="description" content="Portfolio profesional de Sebiche en UX/UI y tecnología." />
-      </Head>
-      <div className="flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-grow">
-          <About />
-          <Experience />
-        </main>
-        <Footer />
-      </div>
+      <Header />
+      <main>
+        <section className="min-h-screen bg-gradient-to-br from-turquoise to-coral flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="text-center text-charcoal px-4"
+          >
+            <h1 className="text-4xl md:text-6xl font-montserrat font-bold mb-4">
+              Sebiche
+            </h1>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 1 }}
+              className="text-lg md:text-2xl font-inter max-w-2xl mx-auto"
+            >
+              Crafting Digital Experiences That Drive Growth & Impact
+            </motion.p>
+            <motion.a
+              href="#experience"
+              whileHover={{ scale: 1.05, backgroundColor: '#FFC107' }}
+              className="mt-6 inline-block px-6 py-3 bg-turquoise text-white font-inter rounded-full"
+            >
+              Explore My Work
+            </motion.a>
+          </motion.div>
+        </section>
+        <About />
+        <Experience />
+        <Projects />
+      </main>
+      <Footer />
     </>
   );
 }
-
