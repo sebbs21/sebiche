@@ -1,8 +1,3 @@
-@import '@fontsource/montserrat/700.css';
-@import '@fontsource/inter/400.css';
-@import '@fontsource/inter/500.css';
-@import '@fontsource/playfair-display/400-italic.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,9 +7,9 @@ body {
 }
 
 h1, h2, h3 {
-  @apply font-montserrat;
+  @apply font-sans;
 }
 
 p {
-  @apply font-inter;
+  @apply font-sans;
 }
