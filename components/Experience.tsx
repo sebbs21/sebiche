@@ -1,4 +1,65 @@
 import { motion } from 'framer-motion';
+import styled from 'styled-components';
+
+const Section = styled.section`
+  padding: 4rem 1rem;
+  max-width: 1280px;
+  margin: 0 auto;
+`;
+
+const Title = styled.h2`
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+  margin-bottom: 2rem;
+`;
+
+const CardList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`;
+
+const Card = styled.div`
+  background: #FFFFFF; /* white */
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+`;
+
+const CardTitle = styled.h3`
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #00C4B4; /* turquoise */
+`;
+
+const Company = styled.p`
+  font-size: 1.125rem;
+  color: #FF6F61; /* coral */
+`;
+
+const Dates = styled.p`
+  font-size: 0.875rem;
+  color: rgba(51, 51, 51, 0.7);
+`;
+
+const List = styled.ul`
+  margin-top: 1rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
+
+const ListItem = styled.li`
+  font-size: 1rem;
+`;
 
 export default function Experience() {
   const experiences = [
@@ -25,39 +86,35 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-16 max-w-7xl mx-auto px-4">
-      <motion.h2
+    <Section id="experience">
+      <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="text-4xl font-montserrat font-bold text-charcoal text-center mb-8"
       >
-        Experience
-      </motion.h2>
-      <div className="space-y-8">
+        <Title>Experience</Title>
+      </motion.div>
+      <CardList>
         {experiences.map((exp, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
-            className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
           >
-            <h3 className="text-xl font-montserrat font-bold text-turquoise">
-              {exp.title}
-            </h3>
-            <p className="text-lg font-inter text-coral">{exp.company}</p>
-            <p className="text-sm font-inter text-charcoal/70">{exp.dates}</p>
-            <ul className="mt-4 space-y-2">
-              {exp.points.map((point, i) => (
-                <li key={i} className="text-base font-inter">
-                  • {point}
-                </li>
-              ))}
-            </ul>
+            <Card>
+              <CardTitle>{exp.title}</CardTitle>
+              <Company>{exp.company}</Company>
+              <Dates>{exp.dates}</Dates>
+              <List>
+                {exp.points.map((point, i) => (
+                  <ListItem key={i}>• {point}</ListItem>
+                ))}
+              </List>
+            </Card>
           </motion.div>
         ))}
-      </div>
-    </section>
+      </CardList>
+    </Section>
   );
 }

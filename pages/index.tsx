@@ -1,42 +1,87 @@
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
 import Header from '../components/Header';
 import About from '../components/About';
 import Experience from '../components/Experience';
 import Projects from '../components/Projects';
 import Footer from '../components/Footer';
-import { motion } from 'framer-motion';
+
+const Hero = styled.section`
+  min-height: 100vh;
+  background: linear-gradient(135deg, #00C4B4, #FF6F61); /* turquoise to coral */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const HeroContent = styled.div`
+  text-align: center;
+  color: #FFFFFF;
+  padding: 1rem;
+`;
+
+const Title = styled.h1`
+  font-size: 2.5rem;
+  font-weight: bold;
+
+  @media (min-width: 768px) {
+    font-size: 4rem;
+  }
+`;
+
+const Subtitle = styled.p`
+  font-size: 1.125rem;
+  max-width: 32rem;
+  margin: 1rem auto;
+
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+  }
+`;
+
+const Button = styled.a`
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #00C4B4; /* turquoise */
+  color: #FFFFFF;
+  text-decoration: none;
+  border-radius: 9999px;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: #FFC107; /* golden */
+  }
+`;
 
 export default function Home() {
   return (
     <>
       <Header />
       <main>
-        <section className="min-h-screen bg-gradient-to-br from-turquoise to-coral flex items-center justify-center">
+        <Hero>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-center text-white px-4"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              Sebastian Napuri Mendoza
-            </h1>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 1 }}
-              className="text-lg md:text-2xl max-w-2xl mx-auto"
-            >
-              Crafting Digital Experiences That Drive Growth & Impact
-            </motion.p>
-            <motion.a
-              href="#experience"
-              whileHover={{ scale: 1.05, backgroundColor: '#FFC107' }}
-              className="mt-6 inline-block px-6 py-3 bg-turquoise text-white rounded-full"
-            >
-              Explore My Work
-            </motion.a>
+            <HeroContent>
+              <Title>Sebastian Napuri Mendoza</Title>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5, duration: 1 }}
+              >
+                <Subtitle>
+                  Crafting Digital Experiences That Drive Growth & Impact
+                </Subtitle>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }}>
+                <Button href="#experience">Explore My Work</Button>
+              </motion.div>
+            </HeroContent>
           </motion.div>
-        </section>
+        </Hero>
         <About />
         <Experience />
         <Projects />
