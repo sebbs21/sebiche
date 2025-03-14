@@ -13,7 +13,6 @@ const Container = styled.div`
   grid-template-columns: 1fr;
   gap: 2rem;
   text-align: center;
-
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr 1fr;
     text-align: left;
@@ -40,11 +39,9 @@ const Center = styled.div`
 
 const Right = styled.div`
   text-align: center;
-
   @media (min-width: 768px) {
     text-align: right;
   }
-
   p {
     font-size: 0.875rem;
   }
@@ -53,7 +50,6 @@ const Right = styled.div`
 const Link = styled.a`
   color: #F7F7F7;
   text-decoration: none;
-
   &:hover {
     color: #FF6F61; /* coral */
   }

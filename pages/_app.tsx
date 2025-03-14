@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import type { AppProps } from 'next/app';
 
-// Global styles
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
