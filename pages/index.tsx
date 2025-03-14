@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 
 const Hero = styled.section`
   min-height: 100vh;
-  background: linear-gradient(135deg, #00C4B4, #FF6F61); /* turquoise to coral */
+  background: linear-gradient(135deg, #00C4B4, #FF6F61);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,7 +23,6 @@ const HeroContent = styled.div`
 const Title = styled.h1`
   font-size: 2.5rem;
   font-weight: bold;
-
   @media (min-width: 768px) {
     font-size: 4rem;
   }
@@ -33,7 +32,6 @@ const Subtitle = styled.p`
   font-size: 1.125rem;
   max-width: 32rem;
   margin: 1rem auto;
-
   @media (min-width: 768px) {
     font-size: 1.5rem;
   }
@@ -43,20 +41,28 @@ const Button = styled.a`
   display: inline-block;
   margin-top: 1.5rem;
   padding: 0.75rem 1.5rem;
-  background: #00C4B4; /* turquoise */
+  background: #00C4B4;
   color: #FFFFFF;
   text-decoration: none;
   border-radius: 9999px;
   transition: background 0.3s ease;
-
   &:hover {
-    background: #FFC107; /* golden */
+    background: #FFC107;
   }
+`;
+
+const TestSection = styled.div`
+  padding: 2rem;
+  background: #FF6F61; /* coral test */
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 1.5rem;
 `;
 
 export default function Home() {
   return (
     <>
+      <TestSection>Header Test</TestSection>
       <Header />
       <main>
         <Hero>
@@ -82,9 +88,13 @@ export default function Home() {
             </HeroContent>
           </motion.div>
         </Hero>
+        <TestSection>About Test</TestSection>
         <About />
+        <TestSection>Experience Test</TestSection>
         <Experience />
+        <TestSection>Projects Test</TestSection>
         <Projects />
+        <TestSection>Footer Test</TestSection>
       </main>
       <Footer />
     </>

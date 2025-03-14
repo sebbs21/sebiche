@@ -61,7 +61,7 @@ export default function Footer() {
       <Container>
         <Left>
           <h3>Sebiche</h3>
-          <p>Email: soysebiche.com</p>
+          <p>Email: soysebiche@gmail.com</p>
           
         </Left>
         <Center>
