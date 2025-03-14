@@ -1,46 +1,52 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion'
 
-export default function About() {
+const About = () => {
   return (
-    <section id="about" className="py-16 max-w-6xl mx-auto px-4">
-      <motion.h2
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="text-3xl font-bold text-center text-gray-900"
-      >
-        About Me
-      </motion.h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="w-full h-64 bg-teal-100 flex items-center justify-center rounded-md"
+    <section id="about" className="section bg-light">
+      <div className="container-custom">
+        <motion.h2 
+          className="section-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
         >
-          [Add your photo or avatar here]
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col gap-4"
-        >
-          <p className="text-lg text-gray-700">
-            I’m a UX/UI leader with over 9 years of experience transforming
-            eCommerce marketplaces and driving sustainable innovation.
-          </p>
-          <p className="text-lg text-gray-700">
-            From boosting cross-border sales by 125% to redesigning user
-            experiences that convert 78% better, I blend design, data, and
-            strategy to create scalable impact.
-          </p>
-          <p className="italic text-teal-600">
-            “Inspired by my Peruvian roots, I’m passionate about building a
-            future where technology meets purpose.”
-          </p>
-        </motion.div>
+          Sobre Mí
+        </motion.h2>
+        
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            className="bg-white rounded-lg shadow-md p-6 md:p-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <p className="text-lg mb-4">
+              Soy un profesional apasionado con experiencia en UX/UI, e-commerce y desarrollo web, 
+              enfocado en crear experiencias digitales intuitivas y atractivas.
+            </p>
+            
+            <p className="text-lg mb-4">
+              Mi objetivo es combinar diseño y tecnología para resolver problemas reales y 
+              mejorar la interacción de los usuarios con productos digitales.
+            </p>
+            
+            <div className="mt-6">
+              <h3 className="font-bold text-xl mb-3">Habilidades principales</h3>
+              <div className="flex flex-wrap gap-2">
+                {["UX/UI", "E-commerce", "React", "Next.js", "TypeScript", "Tailwind CSS"].map((skill) => (
+                  <span key={skill} className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
-  );
+  )
 }
+
+export default About
