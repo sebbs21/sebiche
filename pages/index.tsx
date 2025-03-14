@@ -51,18 +51,9 @@ const Button = styled.a`
   }
 `;
 
-const TestSection = styled.div`
-  padding: 2rem;
-  background: #FF6F61; /* coral test */
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 1.5rem;
-`;
-
 export default function Home() {
   return (
     <>
-      <TestSection>Header Test</TestSection>
       <Header />
       <main>
         <Hero>
@@ -72,7 +63,7 @@ export default function Home() {
             transition={{ duration: 1 }}
           >
             <HeroContent>
-              <Title>Sebiche</Title>
+              <Title>Sebastian Napuri Mendoza</Title>
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -88,13 +79,9 @@ export default function Home() {
             </HeroContent>
           </motion.div>
         </Hero>
-        <TestSection>About Test</TestSection>
         <About />
-        <TestSection>Experience Test</TestSection>
         <Experience />
-        <TestSection>Projects Test</TestSection>
         <Projects />
-        <TestSection>Footer Test</TestSection>
       </main>
       <Footer />
     </>

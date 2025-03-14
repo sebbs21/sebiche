@@ -38,11 +38,9 @@ const NavItem = styled.a`
   text-decoration: none;
   position: relative;
   transition: color 0.3s ease;
-
   &:hover {
     color: #FF6F61; /* coral */
   }
-
   &:after {
     content: '';
     position: absolute;
@@ -53,7 +51,6 @@ const NavItem = styled.a`
     background: #FF6F61;
     transition: width 0.3s ease;
   }
-
   &:hover:after {
     width: 100%;
   }

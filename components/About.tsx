@@ -20,7 +20,6 @@ const Grid = styled.div`
   grid-template-columns: 1fr;
   gap: 2rem;
   align-items: center;
-
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
   }
@@ -51,7 +50,6 @@ const Quote = styled.p`
   font-size: 0.875rem;
   font-style: italic;
   color: #FF6F61; /* coral */
-  font-family: 'Playfair Display', serif;
 `;
 
 export default function About() {
