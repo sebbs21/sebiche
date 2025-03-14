@@ -1,5 +1,4 @@
-import { motion } from 'framer-motion';
-import styled from 'styled-components';
+import Link from "next/link";
 
 const HeaderWrapper = styled.header`
   position: fixed;
@@ -57,15 +56,23 @@ const NavItem = styled.a`
 `;
 
 export default function Header() {
-  const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
-  ];
-
   return (
+<<<<<<< HEAD
+    <header className="fixed top-0 left-0 right-0 bg-white shadow-md py-4 px-6 z-50">
+      <nav className="flex justify-between items-center max-w-6xl mx-auto">
+        <h1 className="text-xl font-bold text-teal-600">Sebiche</h1>
+        <ul className="flex space-x-6">
+          {["Home", "About", "Experience", "Projects", "Contact"].map((item) => (
+            <li key={item}>
+              <Link href={`#${item.toLowerCase()}`} className="hover:text-teal-500 transition">
+                {item}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </header>
+=======
     <motion.div
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -84,5 +91,6 @@ export default function Header() {
         </Nav>
       </HeaderWrapper>
     </motion.div>
+>>>>>>> 4fb6e32b9bd16ab5e2434ca2153779a4143bd305
   );
 }
