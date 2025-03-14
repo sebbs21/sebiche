@@ -60,9 +60,9 @@ export default function Footer() {
     <FooterWrapper>
       <Container>
         <Left>
-          <h3>Sebastian Napuri Mendoza</h3>
-          <p>Email: sebas.napuri@gmail.com</p>
-          <p>Phone: +1 (469) 435-4914</p>
+          <h3>Sebiche</h3>
+          <p>Email: soysebiche.com</p>
+          
         </Left>
         <Center>
           <Link href="#">LinkedIn</Link>

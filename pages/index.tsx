@@ -66,7 +66,7 @@ export default function Home() {
             transition={{ duration: 1 }}
           >
             <HeroContent>
-              <Title>Sebastian Napuri Mendoza</Title>
+              <Title>Sebiche</Title>
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
