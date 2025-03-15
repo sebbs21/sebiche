@@ -70,9 +70,10 @@ export default function Home() {
         <p className="text-lg mb-4">
           I’m a UX/UI leader with over 9 years of experience transforming eCommerce marketplaces and driving sustainable innovation.
         </p>
-        <p className="text-lg">
+        <p className="text-lg mb-4">
           From boosting cross-border sales by 125% to redesigning user experiences that convert 78% better, I blend design, data, and strategy to create scalable impact.
         </p>
+        <p className="text-coral italic text-lg">“Inspired by my Peruvian roots, I build tech with purpose.”</p>
       </motion.section>
 
       <motion.section
