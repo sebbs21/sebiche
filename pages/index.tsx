@@ -22,6 +22,7 @@ export default function Home() {
           <div className="space-x-4">
             <a href="#about" className="hover:text-coral">About</a>
             <a href="#experience" className="hover:text-coral">Experience</a>
+            <a href="#projects" className="hover:text-coral">Projects</a>
             <a href="#contact" className="hover:text-coral">Contact</a>
           </div>
         </nav>
@@ -108,6 +109,28 @@ export default function Home() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
+        id="projects"
+        className="py-16 px-4 max-w-4xl mx-auto"
+      >
+        <h2 className="text-3xl font-bold text-center mb-8">Projects</h2>
+        <div className="space-y-8">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold text-turquoise">Crossborder Marketplace</h3>
+            <p className="text-coral">Servicios Liverpool | 2022-2024</p>
+            <p className="mt-2">Led the development of a cross-border eCommerce platform, growing to over 100 sellers and boosting sales by 125%.</p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold text-turquoise">Sebiche Portfolio</h3>
+            <p className="text-coral">Personal Project | 2025</p>
+            <p className="mt-2">Built a modern portfolio using Next.js and Tailwind CSS to showcase my professional journey.</p>
+          </div>
+        </div>
+      </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
         id="contact"
         className="py-16 px-4 bg-charcoal text-white text-center"
       >
