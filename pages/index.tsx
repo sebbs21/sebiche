@@ -39,7 +39,7 @@ export default function Home() {
           <p className="text-base sm:text-lg md:text-2xl max-w-2xl mx-auto mb-6">
             Crafting Digital Experiences That Drive Growth & Impact
           </p>
-          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center mx-auto">
             <a
               href="#experience"
               className="inline-block px-6 py-3 bg-white text-turquoise font-semibold rounded-full hover:bg-coral hover:text-white transition"
@@ -146,7 +146,7 @@ export default function Home() {
         transition={{ duration: 0.8, delay: 1 }}
         className="bg-charcoal text-white py-4 text-center"
       >
-        <p className="text-sm sm:text-base">&copy; 2025 Sebastian Napuri Mendoza. All rights reserved.</p>
+        <p className="text-sm sm:text-base">© 2025 Sebastian Napuri Mendoza. All rights reserved.</p>
         <div className="flex justify-center gap-4 mt-2">
           <a href="#" className="text-turquoise hover:text-coral">LinkedIn</a>
           <a href="#" className="text-turquoise hover:text-coral">GitHub</a>
