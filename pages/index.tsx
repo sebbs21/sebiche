@@ -31,7 +31,11 @@ export default function Home() {
   };
 
   const toggleDarkMode = () => {
-    setIsDarkMode((prev) => !prev);
+    setIsDarkMode((prev) => {
+      const newMode = !prev;
+      console.log('Dark Mode:', newMode); // Para depurar
+      return newMode;
+    });
   };
 
   const toggleMenu = () => {
@@ -39,7 +43,7 @@ export default function Home() {
   };
 
   return (
-    <div className={`min-h-screen ${isDarkMode ? 'dark' : ''} bg-softGray dark:bg-gray-800`}>
+    <div className={`min-h-screen ${isDarkMode ? 'dark bg-gray-800' : 'bg-softGray'}`}>
       <Head>
         <title>Sebastian Napuri Mendoza | Portfolio</title>
         <meta name="description" content="Professional portfolio of Sebastian Napuri Mendoza" />
