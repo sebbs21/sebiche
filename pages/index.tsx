@@ -3,11 +3,12 @@ import Head from 'next/head';
 export default function Home() {
   return (
     <div>
-      <Head>
+      <<Head>
         <title>Sebastian Napuri Mendoza | Portfolio</title>
         <meta name="description" content="Professional portfolio of Sebastian Napuri Mendoza" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet" />
+</Head>
 
       {/* Hero Section con degradado */}
       <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-turquoise to-coral text-white text-center px-4">
