@@ -38,7 +38,9 @@ export default function Home() {
 
       <section id="about" className="py-16 px-4 max-w-4xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-6">About Me</h2>
-        <img src="/sebastian.jpg" alt="Sebastian Napuri" className="w-32 h-32 rounded-full mx-auto mb-4" />
+        <div className="w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
+          <img src="/sebastian.jpg" alt="Sebastian Napuri" className="w-full h-full object-cover" />
+        </div>
         <p className="text-lg mb-4">
           I’m a UX/UI leader with over 9 years of experience transforming eCommerce marketplaces and driving sustainable innovation.
         </p>
