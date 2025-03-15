@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-softGray text-charcoal font-['Inter'];
-}
-
 h1, h2, h3 {
   @apply font-['Montserrat'];
 }

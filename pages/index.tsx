@@ -34,7 +34,7 @@ export default function Home() {
   };
 
   return (
-    <div className={isDarkMode ? 'dark' : ''}>
+    <div className={`min-h-screen ${isDarkMode ? 'dark' : ''} bg-softGray dark:bg-gray-800`}>
       <Head>
         <title>Sebastian Napuri Mendoza | Portfolio</title>
         <meta name="description" content="Professional portfolio of Sebastian Napuri Mendoza" />
@@ -99,7 +99,7 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
         id="about"
-        className="py-16 px-4 max-w-4xl mx-auto text-center bg-softGray dark:bg-gray-800 text-charcoal dark:text-white"
+        className="py-16 px-4 max-w-4xl mx-auto text-center text-charcoal dark:text-white"
       >
         <h2 className="text-2xl sm:text-3xl font-bold mb-6">About Me</h2>
         <div className="w-32 sm:w-48 h-32 sm:h-48 mx-auto mb-4 rounded-full overflow-hidden">
@@ -119,7 +119,7 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
         id="experience"
-        className="py-16 px-4 max-w-4xl mx-auto bg-softGray dark:bg-gray-800 text-charcoal dark:text-white"
+        className="py-16 px-4 max-w-4xl mx-auto text-charcoal dark:text-white"
       >
         <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8">Experience</h2>
         <div className="space-y-8">
@@ -149,7 +149,7 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
         id="projects"
-        className="py-16 px-4 max-w-4xl mx-auto bg-softGray dark:bg-gray-800 text-charcoal dark:text-white"
+        className="py-16 px-4 max-w-4xl mx-auto text-charcoal dark:text-white"
       >
         <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8">Projects</h2>
         <div className="relative flex items-center justify-center">
@@ -167,7 +167,7 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="bg-white dark:bg-gray-700 p-4 sm:p-6 rounded-lg shadow-md flex-1 max-w-lg"
           >
-            <h3 className="text-lg sm:text-xl font-semibold text-turquoise"> {projects[currentProject].title}</h3>
+            <h3 className="text-lg sm:text-xl font-semibold text-turquoise">{projects[currentProject].title}</h3>
             <p className="text-coral text-sm sm:text-base">{projects[currentProject].company} | {projects[currentProject].date}</p>
             <p className="mt-2 text-sm sm:text-base">{projects[currentProject].description}</p>
           </motion.div>
