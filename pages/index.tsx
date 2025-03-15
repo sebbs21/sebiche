@@ -33,7 +33,8 @@ export default function Home() {
   const toggleDarkMode = () => {
     setIsDarkMode((prev) => {
       const newMode = !prev;
-      console.log('Dark Mode:', newMode); // Para depurar
+      console.log('Dark Mode Toggled To:', newMode); // Depuración
+      document.documentElement.classList.toggle('dark', newMode); // Forzar clase en <html>
       return newMode;
     });
   };
@@ -58,7 +59,7 @@ export default function Home() {
         className="fixed top-0 left-0 right-0 bg-charcoal/80 dark:bg-gray-900/80 backdrop-blur-md text-white py-4 px-4 z-20"
       >
         <nav className="max-w-4xl mx-auto flex justify-between items-center">
-          <a href="/" className="text-turquoise font-bold text-xl">Sebiche</a>
+          <a href="/" className="text-turquoise font-['Montserrat'] text-2xl font-bold tracking-tight">Sebiche</a>
           <div className="flex items-center">
             <div className="hidden sm:flex space-x-4 items-center">
               <a href="#about" className="hover:text-coral">About</a>
