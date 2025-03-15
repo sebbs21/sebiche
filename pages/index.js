@@ -22,7 +22,7 @@ export default function Home() {
         {/* Footer */}
         <footer className="bg-gray-800 text-white p-4">
           <div className="max-w-screen-xl mx-auto px-4 text-center">
-            <p>Contacto: ejemplo@sebiche.com</p>
+            <p>Contacto: soysebiche@gmail.com</p>
             <p className="mt-2 text-sm text-gray-400">© 2025 Sebiche. Todos los derechos reservados.</p>
           </div>
         </footer>
