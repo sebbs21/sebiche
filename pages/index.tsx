@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Sebiche | Portfolio</title>
+        <title>Sebastian Napuri Mendoza | Portfolio</title>
         <meta name="description" content="Professional portfolio of Sebastian Napuri Mendoza" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
