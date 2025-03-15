@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   return (
@@ -10,7 +11,12 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet" />
       </Head>
 
-      <header className="fixed top-0 left-0 right-0 bg-charcoal/80 backdrop-blur-md text-white py-4 px-4 z-10">
+      <motion.header
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="fixed top-0 left-0 right-0 bg-charcoal/80 backdrop-blur-md text-white py-4 px-4 z-10"
+      >
         <nav className="max-w-4xl mx-auto flex justify-between">
           <a href="/" className="text-turquoise font-bold">Sebiche</a>
           <div className="space-x-4">
@@ -19,9 +25,14 @@ export default function Home() {
             <a href="#contact" className="hover:text-coral">Contact</a>
           </div>
         </nav>
-      </header>
+      </motion.header>
 
-      <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-turquoise to-coral text-white text-center px-4">
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="min-h-screen flex items-center justify-center bg-gradient-to-br from-turquoise to-coral text-white text-center px-4"
+      >
         <div>
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Sebastian Napuri Mendoza</h1>
           <p className="text-lg md:text-2xl max-w-2xl mx-auto mb-6">
@@ -42,9 +53,15 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section id="about" className="py-16 px-4 max-w-4xl mx-auto text-center">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        id="about"
+        className="py-16 px-4 max-w-4xl mx-auto text-center"
+      >
         <h2 className="text-3xl font-bold mb-6">About Me</h2>
         <div className="w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
           <img src="/sebastian.jpg" alt="Sebastian Napuri" className="w-full h-full object-cover" />
@@ -55,9 +72,15 @@ export default function Home() {
         <p className="text-lg">
           From boosting cross-border sales by 125% to redesigning user experiences that convert 78% better, I blend design, data, and strategy to create scalable impact.
         </p>
-      </section>
+      </motion.section>
 
-      <section id="experience" className="py-16 px-4 max-w-4xl mx-auto">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        id="experience"
+        className="py-16 px-4 max-w-4xl mx-auto"
+      >
         <h2 className="text-3xl font-bold text-center mb-8">Experience</h2>
         <div className="space-y-8">
           <div className="bg-white p-6 rounded-lg shadow-md">
@@ -79,9 +102,15 @@ export default function Home() {
             </ul>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section id="contact" className="py-16 px-4 bg-charcoal text-white text-center">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        id="contact"
+        className="py-16 px-4 bg-charcoal text-white text-center"
+      >
         <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
         <p className="text-lg mb-4">Email: sebas.napuri@gmail.com</p>
         <p className="text-lg mb-4">Phone: +1 (469) 435-4914</p>
@@ -89,7 +118,7 @@ export default function Home() {
           <a href="#" className="text-turquoise hover:text-coral">LinkedIn</a>
           <a href="#" className="text-turquoise hover:text-coral">GitHub</a>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }
