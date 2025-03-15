@@ -3,14 +3,13 @@ import Head from 'next/head';
 export default function Home() {
   return (
     <div>
-      <<Head>
+      <Head>
         <title>Sebastian Napuri Mendoza | Portfolio</title>
         <meta name="description" content="Professional portfolio of Sebastian Napuri Mendoza" />
         <link rel="icon" href="/favicon.ico" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet" />
-</Head>
+      </Head>
 
-      {/* Hero Section con degradado */}
       <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-turquoise to-coral text-white text-center px-4">
         <div>
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Sebastian Napuri Mendoza</h1>
@@ -26,7 +25,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section */}
       <section id="about" className="py-16 px-4 max-w-4xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-6">About Me</h2>
         <p className="text-lg mb-4">
@@ -37,7 +35,6 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Experience Section */}
       <section id="experience" className="py-16 px-4 max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-8">Experience</h2>
         <div className="space-y-8">
@@ -62,7 +59,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Section */}
       <section id="contact" className="py-16 px-4 bg-charcoal text-white text-center">
         <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
         <p className="text-lg mb-4">Email: sebas.napuri@gmail.com</p>
