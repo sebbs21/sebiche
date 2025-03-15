@@ -52,13 +52,6 @@ export default function Home() {
             >
               Contact Me
             </a>
-            <a
-              href="/cv.pdf"
-              download
-              className="inline-block px-6 py-3 bg-turquoise text-white font-semibold rounded-full hover:bg-coral transition"
-            >
-              Download CV
-            </a>
           </div>
         </div>
       </motion.section>
