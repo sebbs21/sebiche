@@ -5,6 +5,7 @@ import { useState } from 'react';
 export default function Home() {
   const [currentProject, setCurrentProject] = useState(0);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const projects = [
     {
@@ -33,6 +34,10 @@ export default function Home() {
     setIsDarkMode((prev) => !prev);
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
   return (
     <div className={`min-h-screen ${isDarkMode ? 'dark' : ''} bg-softGray dark:bg-gray-800`}>
       <Head>
@@ -46,24 +51,56 @@ export default function Home() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="fixed top-0 left-0 right-0 bg-charcoal/80 dark:bg-gray-900/80 backdrop-blur-md text-white py-4 px-4 z-10"
+        className="fixed top-0 left-0 right-0 bg-charcoal/80 dark:bg-gray-900/80 backdrop-blur-md text-white py-4 px-4 z-20"
       >
-        <nav className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center">
-          <a href="/" className="text-turquoise font-bold text-xl mb-2 sm:mb-0">Sebiche</a>
-          <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 items-center">
-            <a href="#about" className="hover:text-coral">About</a>
-            <a href="#experience" className="hover:text-coral">Experience</a>
-            <a href="#projects" className="hover:text-coral">Projects</a>
-            <a href="#contact" className="hover:text-coral">Contact</a>
+        <nav className="max-w-4xl mx-auto flex justify-between items-center">
+          <a href="/" className="text-turquoise font-bold text-xl">Sebiche</a>
+          <div className="flex items-center">
+            <div className="hidden sm:flex space-x-4 items-center">
+              <a href="#about" className="hover:text-coral">About</a>
+              <a href="#experience" className="hover:text-coral">Experience</a>
+              <a href="#projects" className="hover:text-coral">Projects</a>
+              <a href="#contact" className="hover:text-coral">Contact</a>
+              <button
+                onClick={toggleDarkMode}
+                className="text-turquoise hover:text-coral focus:outline-none ml-4"
+                aria-label="Toggle dark mode"
+              >
+                {isDarkMode ? '☀️' : '🌙'}
+              </button>
+            </div>
             <button
-              onClick={toggleDarkMode}
-              className="text-turquoise hover:text-coral focus:outline-none ml-4"
-              aria-label="Toggle dark mode"
+              className="sm:hidden text-turquoise hover:text-coral focus:outline-none"
+              onClick={toggleMenu}
+              aria-label="Toggle menu"
             >
-              {isDarkMode ? '☀️' : '🌙'}
+              {isMenuOpen ? '✕' : '☰'}
             </button>
           </div>
         </nav>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="sm:hidden absolute top-full left-0 right-0 bg-charcoal/90 dark:bg-gray-900/90 backdrop-blur-md text-white px-4 py-4 mt-1 z-10"
+          >
+            <div className="flex flex-col space-y-4">
+              <a href="#about" className="hover:text-coral" onClick={toggleMenu}>About</a>
+              <a href="#experience" className="hover:text-coral" onClick={toggleMenu}>Experience</a>
+              <a href="#projects" className="hover:text-coral" onClick={toggleMenu}>Projects</a>
+              <a href="#contact" className="hover:text-coral" onClick={toggleMenu}>Contact</a>
+              <button
+                onClick={toggleDarkMode}
+                className="text-turquoise hover:text-coral focus:outline-none text-left"
+                aria-label="Toggle dark mode"
+              >
+                {isDarkMode ? '☀️ Light Mode' : '🌙 Dark Mode'}
+              </button>
+            </div>
+          </motion.div>
+        )}
       </motion.header>
 
       <motion.section
