@@ -7,7 +7,7 @@ export default function Home() {
       <Head>
         <title>Sebastian Napuri Mendoza | Portfolio</title>
         <meta name="description" content="Professional portfolio of Sebastian Napuri Mendoza" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet" />
       </Head>
 
@@ -51,6 +51,13 @@ export default function Home() {
               className="inline-block px-6 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-coral transition"
             >
               Contact Me
+            </a>
+            <a
+              href="/cv.pdf"
+              download
+              className="inline-block px-6 py-3 bg-turquoise text-white font-semibold rounded-full hover:bg-coral transition"
+            >
+              Download CV
             </a>
           </div>
         </div>
@@ -136,7 +143,7 @@ export default function Home() {
         className="py-16 px-4 bg-charcoal text-white text-center"
       >
         <h2 className="text-2xl sm:text-3xl font-bold mb-6">Get in Touch</h2>
-        <form action="https://formspree.io/f/xvgkggkj" method="POST" className="max-w-md mx-auto space-y-4">
+        <form action="https://formspree.io/f/xexample" method="POST" className="max-w-md mx-auto space-y-4">
           <div>
             <input
               type="text"
@@ -181,8 +188,8 @@ export default function Home() {
       >
         <p className="text-sm sm:text-base">© 2025 Sebastian Napuri Mendoza. All rights reserved.</p>
         <div className="flex justify-center gap-4 mt-2">
-          <a href="#" className="text-turquoise hover:text-coral">LinkedIn</a>
-          <a href="#" className="text-turquoise hover:text-coral">GitHub</a>
+          <a href="https://www.linkedin.com/in/snapurimendoza/" target="_blank" rel="noopener noreferrer" className="text-turquoise hover:text-coral">LinkedIn</a>
+          <a href="https://www.instagram.com/soysebiche" target="_blank" rel="noopener noreferrer" className="text-turquoise hover:text-coral">Instagram</a>
         </div>
       </motion.footer>
     </div>
