@@ -140,28 +140,28 @@ export default function Home() {
         className="py-16 px-4 max-w-4xl mx-auto"
       >
         <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8">Projects</h2>
-        <div className="relative">
+        <div className="relative flex items-center justify-center">
+          <button
+            onClick={handlePrev}
+            className="flex-shrink-0 bg-turquoise text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-coral transition mr-4"
+          >
+            ←
+          </button>
           <motion.div
             key={currentProject}
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.5 }}
-            className="bg-white p-4 sm:p-6 rounded-lg shadow-md"
+            className="bg-white p-4 sm:p-6 rounded-lg shadow-md flex-1 max-w-lg"
           >
             <h3 className="text-lg sm:text-xl font-semibold text-turquoise">{projects[currentProject].title}</h3>
             <p className="text-coral text-sm sm:text-base">{projects[currentProject].company} | {projects[currentProject].date}</p>
             <p className="mt-2 text-sm sm:text-base">{projects[currentProject].description}</p>
           </motion.div>
           <button
-            onClick={handlePrev}
-            className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-turquoise text-white p-2 rounded-full hover:bg-coral transition"
-          >
-            ←
-          </button>
-          <button
             onClick={handleNext}
-            className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-turquoise text-white p-2 rounded-full hover:bg-coral transition"
+            className="flex-shrink-0 bg-turquoise text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-coral transition ml-4"
           >
             →
           </button>
