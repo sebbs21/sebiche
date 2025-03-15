@@ -152,10 +152,10 @@ export default function Home() {
         className="py-16 px-4 max-w-4xl mx-auto text-charcoal dark:text-white"
       >
         <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8">Projects</h2>
-        <div className="relative flex items-center justify-center">
+        <div className="relative flex items-center justify-center overflow-hidden">
           <button
             onClick={handlePrev}
-            className="flex-shrink-0 bg-turquoise text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-coral transition mr-4"
+            className="flex-shrink-0 bg-turquoise text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-coral transition mr-4 z-10"
           >
             ←
           </button>
@@ -164,7 +164,7 @@ export default function Home() {
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.3 }}
             className="bg-white dark:bg-gray-700 p-4 sm:p-6 rounded-lg shadow-md flex-1 max-w-lg"
           >
             <h3 className="text-lg sm:text-xl font-semibold text-turquoise">{projects[currentProject].title}</h3>
@@ -173,7 +173,7 @@ export default function Home() {
           </motion.div>
           <button
             onClick={handleNext}
-            className="flex-shrink-0 bg-turquoise text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-coral transition ml-4"
+            className="flex-shrink-0 bg-turquoise text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-coral transition ml-4 z-10"
           >
             →
           </button>
