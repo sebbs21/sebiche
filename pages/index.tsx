@@ -4,7 +4,6 @@ import { useState } from 'react';
 
 export default function Home() {
   const [currentProject, setCurrentProject] = useState(0);
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const projects = [
@@ -30,21 +29,12 @@ export default function Home() {
     setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length);
   };
 
-  const toggleDarkMode = () => {
-    setIsDarkMode((prev) => {
-      const newMode = !prev;
-      console.log('Dark Mode Toggled To:', newMode); // Depuración
-      document.documentElement.classList.toggle('dark', newMode); // Forzar clase en <html>
-      return newMode;
-    });
-  };
-
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
   return (
-    <div className={`min-h-screen ${isDarkMode ? 'dark bg-gray-800' : 'bg-softGray'}`}>
+    <div className="min-h-screen bg-softGray">
       <Head>
         <title>Sebastian Napuri Mendoza | Portfolio</title>
         <meta name="description" content="Professional portfolio of Sebastian Napuri Mendoza" />
@@ -56,7 +46,7 @@ export default function Home() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="fixed top-0 left-0 right-0 bg-charcoal/80 dark:bg-gray-900/80 backdrop-blur-md text-white py-4 px-4 z-20"
+        className="fixed top-0 left-0 right-0 bg-charcoal/80 backdrop-blur-md text-white py-4 px-4 z-20"
       >
         <nav className="max-w-4xl mx-auto flex justify-between items-center">
           <a href="/" className="text-turquoise font-['Montserrat'] text-2xl font-bold tracking-tight">Sebiche</a>
@@ -66,13 +56,6 @@ export default function Home() {
               <a href="#experience" className="hover:text-coral">Experience</a>
               <a href="#projects" className="hover:text-coral">Projects</a>
               <a href="#contact" className="hover:text-coral">Contact</a>
-              <button
-                onClick={toggleDarkMode}
-                className="text-turquoise hover:text-coral focus:outline-none ml-4"
-                aria-label="Toggle dark mode"
-              >
-                {isDarkMode ? '☀️' : '🌙'}
-              </button>
             </div>
             <button
               className="sm:hidden text-turquoise hover:text-coral focus:outline-none"
@@ -89,20 +72,13 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="sm:hidden absolute top-full left-0 right-0 bg-charcoal/90 dark:bg-gray-900/90 backdrop-blur-md text-white px-4 py-4 mt-1 z-10"
+            className="sm:hidden absolute top-full left-0 right-0 bg-charcoal/90 backdrop-blur-md text-white px-4 py-4 mt-1 z-10"
           >
             <div className="flex flex-col space-y-4">
               <a href="#about" className="hover:text-coral" onClick={toggleMenu}>About</a>
               <a href="#experience" className="hover:text-coral" onClick={toggleMenu}>Experience</a>
               <a href="#projects" className="hover:text-coral" onClick={toggleMenu}>Projects</a>
               <a href="#contact" className="hover:text-coral" onClick={toggleMenu}>Contact</a>
-              <button
-                onClick={toggleDarkMode}
-                className="text-turquoise hover:text-coral focus:outline-none text-left"
-                aria-label="Toggle dark mode"
-              >
-                {isDarkMode ? '☀️ Light Mode' : '🌙 Dark Mode'}
-              </button>
             </div>
           </motion.div>
         )}
@@ -112,7 +88,7 @@ export default function Home() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="min-h-screen flex items-center justify-center bg-gradient-to-br from-turquoise to-coral dark:from-gray-800 dark:to-gray-900 text-white text-center px-4 pt-20 sm:pt-0"
+        className="min-h-screen flex items-center justify-center bg-gradient-to-br from-turquoise to-coral text-white text-center px-4 pt-20 sm:pt-0"
       >
         <div>
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4">Sebastian Napuri Mendoza</h1>
@@ -122,13 +98,13 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center mx-auto">
             <a
               href="#experience"
-              className="inline-block px-6 py-3 bg-white dark:bg-gray-700 text-turquoise dark:text-white font-semibold rounded-full hover:bg-coral hover:text-white transition"
+              className="inline-block px-6 py-3 bg-white text-turquoise font-semibold rounded-full hover:bg-coral hover:text-white transition"
             >
               Explore My Work
             </a>
             <a
               href="#contact"
-              className="inline-block px-6 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white dark:hover:bg-gray-700 hover:text-coral dark:hover:text-coral transition"
+              className="inline-block px-6 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-coral transition"
             >
               Contact Me
             </a>
@@ -141,7 +117,7 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
         id="about"
-        className="py-16 px-4 max-w-4xl mx-auto text-center text-charcoal dark:text-white"
+        className="py-16 px-4 max-w-4xl mx-auto text-center text-charcoal"
       >
         <h2 className="text-2xl sm:text-3xl font-bold mb-6">About Me</h2>
         <div className="w-32 sm:w-48 h-32 sm:h-48 mx-auto mb-4 rounded-full overflow-hidden">
@@ -161,11 +137,11 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
         id="experience"
-        className="py-16 px-4 max-w-4xl mx-auto text-charcoal dark:text-white"
+        className="py-16 px-4 max-w-4xl mx-auto text-charcoal"
       >
         <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8">Experience</h2>
         <div className="space-y-8">
-          <div className="bg-white dark:bg-gray-700 p-4 sm:p-6 rounded-lg shadow-md">
+          <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md">
             <h3 className="text-lg sm:text-xl font-semibold text-turquoise">Marketplace BU Manager</h3>
             <p className="text-coral text-sm sm:text-base">Servicios Liverpool | 06/2022 - 07/2024</p>
             <ul className="list-disc list-inside mt-2 text-sm sm:text-base">
@@ -174,7 +150,7 @@ export default function Home() {
               <li>Increased seller onboarding conversion by 78% via UX redesign.</li>
             </ul>
           </div>
-          <div className="bg-white dark:bg-gray-700 p-4 sm:p-6 rounded-lg shadow-md">
+          <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md">
             <h3 className="text-lg sm:text-xl font-semibold text-turquoise">Regional Hardlines Cross-Border Commercial Manager</h3>
             <p className="text-coral text-sm sm:text-base">Linio México | 01/2020 - 05/2022</p>
             <ul className="list-disc list-inside mt-2 text-sm sm:text-base">
@@ -191,7 +167,7 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
         id="projects"
-        className="py-16 px-4 max-w-4xl mx-auto text-charcoal dark:text-white"
+        className="py-16 px-4 max-w-4xl mx-auto text-charcoal"
       >
         <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8">Projects</h2>
         <div className="relative flex items-center justify-center overflow-hidden">
@@ -207,7 +183,7 @@ export default function Home() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.3 }}
-            className="bg-white dark:bg-gray-700 p-4 sm:p-6 rounded-lg shadow-md flex-1 max-w-lg"
+            className="bg-white p-4 sm:p-6 rounded-lg shadow-md flex-1 max-w-lg"
           >
             <h3 className="text-lg sm:text-xl font-semibold text-turquoise">{projects[currentProject].title}</h3>
             <p className="text-coral text-sm sm:text-base">{projects[currentProject].company} | {projects[currentProject].date}</p>
@@ -224,7 +200,7 @@ export default function Home() {
           {projects.map((_, index) => (
             <span
               key={index}
-              className={`h-2 w-2 rounded-full ${index === currentProject ? 'bg-turquoise' : 'bg-gray-300 dark:bg-gray-500'}`}
+              className={`h-2 w-2 rounded-full ${index === currentProject ? 'bg-turquoise' : 'bg-gray-300'}`}
             />
           ))}
         </div>
@@ -235,7 +211,7 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
         id="contact"
-        className="py-16 px-4 bg-charcoal dark:bg-gray-900 text-white text-center"
+        className="py-16 px-4 bg-charcoal text-white text-center"
       >
         <h2 className="text-2xl sm:text-3xl font-bold mb-6">Get in Touch</h2>
         <form action="https://formspree.io/f/xexample" method="POST" className="max-w-md mx-auto space-y-4">
@@ -245,7 +221,7 @@ export default function Home() {
               name="name"
               placeholder="Your Name"
               required
-              className="w-full px-4 py-2 rounded-md bg-white/10 dark:bg-gray-700 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-turquoise"
+              className="w-full px-4 py-2 rounded-md bg-white/10 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-turquoise"
             />
           </div>
           <div>
@@ -254,7 +230,7 @@ export default function Home() {
               name="email"
               placeholder="Your Email"
               required
-              className="w-full px-4 py-2 rounded-md bg-white/10 dark:bg-gray-700 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-turquoise"
+              className="w-full px-4 py-2 rounded-md bg-white/10 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-turquoise"
             />
           </div>
           <div>
@@ -263,7 +239,7 @@ export default function Home() {
               placeholder="Your Message"
               required
               rows={4}
-              className="w-full px-4 py-2 rounded-md bg-white/10 dark:bg-gray-700 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-turquoise"
+              className="w-full px-4 py-2 rounded-md bg-white/10 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-turquoise"
             />
           </div>
           <button
@@ -279,7 +255,7 @@ export default function Home() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1 }}
-        className="bg-charcoal dark:bg-gray-900 text-white py-4 text-center"
+        className="bg-charcoal text-white py-4 text-center"
       >
         <p className="text-sm sm:text-base">© 2025 Sebastian Napuri Mendoza. All rights reserved.</p>
         <div className="flex justify-center gap-4 mt-2">
