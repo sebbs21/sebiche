@@ -17,9 +17,9 @@ export default function Home() {
         transition={{ duration: 0.5 }}
         className="fixed top-0 left-0 right-0 bg-charcoal/80 backdrop-blur-md text-white py-4 px-4 z-10"
       >
-        <nav className="max-w-4xl mx-auto flex justify-between">
-          <a href="/" className="text-turquoise font-bold">Sebiche</a>
-          <div className="space-x-4">
+        <nav className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center">
+          <a href="/" className="text-turquoise font-bold text-xl mb-2 sm:mb-0">Sebiche</a>
+          <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
             <a href="#about" className="hover:text-coral">About</a>
             <a href="#experience" className="hover:text-coral">Experience</a>
             <a href="#projects" className="hover:text-coral">Projects</a>
@@ -32,14 +32,14 @@ export default function Home() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="min-h-screen flex items-center justify-center bg-gradient-to-br from-turquoise to-coral text-white text-center px-4"
+        className="min-h-screen flex items-center justify-center bg-gradient-to-br from-turquoise to-coral text-white text-center px-4 pt-20 sm:pt-0"
       >
         <div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Sebastian Napuri Mendoza</h1>
-          <p className="text-lg md:text-2xl max-w-2xl mx-auto mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4">Sebastian Napuri Mendoza</h1>
+          <p className="text-base sm:text-lg md:text-2xl max-w-2xl mx-auto mb-6">
             Crafting Digital Experiences That Drive Growth & Impact
           </p>
-          <div className="space-x-4">
+          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
             <a
               href="#experience"
               className="inline-block px-6 py-3 bg-white text-turquoise font-semibold rounded-full hover:bg-coral hover:text-white transition"
@@ -63,17 +63,17 @@ export default function Home() {
         id="about"
         className="py-16 px-4 max-w-4xl mx-auto text-center"
       >
-        <h2 className="text-3xl font-bold mb-6">About Me</h2>
-        <div className="w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-6">About Me</h2>
+        <div className="w-32 sm:w-48 h-32 sm:h-48 mx-auto mb-4 rounded-full overflow-hidden">
           <img src="/sebastian.jpg" alt="Sebastian Napuri" className="w-full h-full object-cover" />
         </div>
-        <p className="text-lg mb-4">
+        <p className="text-base sm:text-lg mb-4">
           I’m a UX/UI leader with over 9 years of experience transforming eCommerce marketplaces and driving sustainable innovation.
         </p>
-        <p className="text-lg mb-4">
+        <p className="text-base sm:text-lg mb-4">
           From boosting cross-border sales by 125% to redesigning user experiences that convert 78% better, I blend design, data, and strategy to create scalable impact.
         </p>
-        <p className="text-coral italic text-lg">“Inspired by my Peruvian roots, I build tech with purpose.”</p>
+        <p className="text-coral italic text-base sm:text-lg">“Inspired by my Peruvian roots, I build tech with purpose.”</p>
       </motion.section>
 
       <motion.section
@@ -83,21 +83,21 @@ export default function Home() {
         id="experience"
         className="py-16 px-4 max-w-4xl mx-auto"
       >
-        <h2 className="text-3xl font-bold text-center mb-8">Experience</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8">Experience</h2>
         <div className="space-y-8">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold text-turquoise">Marketplace BU Manager</h3>
-            <p className="text-coral">Servicios Liverpool | 06/2022 - 07/2024</p>
-            <ul className="list-disc list-inside mt-2">
+          <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md">
+            <h3 className="text-lg sm:text-xl font-semibold text-turquoise">Marketplace BU Manager</h3>
+            <p className="text-coral text-sm sm:text-base">Servicios Liverpool | 06/2022 - 07/2024</p>
+            <ul className="list-disc list-inside mt-2 text-sm sm:text-base">
               <li>Led Crossborder Marketplace project, growing to 100+ sellers.</li>
               <li>Reduced response times by 35% with automation tools.</li>
               <li>Increased seller onboarding conversion by 78% via UX redesign.</li>
             </ul>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold text-turquoise">Regional Hardlines Cross-Border Commercial Manager</h3>
-            <p className="text-coral">Linio México | 01/2020 - 05/2022</p>
-            <ul className="list-disc list-inside mt-2">
+          <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md">
+            <h3 className="text-lg sm:text-xl font-semibold text-turquoise">Regional Hardlines Cross-Border Commercial Manager</h3>
+            <p className="text-coral text-sm sm:text-base">Linio México | 01/2020 - 05/2022</p>
+            <ul className="list-disc list-inside mt-2 text-sm sm:text-base">
               <li>Boosted cross-border sales by 125% with growth strategies.</li>
               <li>Improved operational efficiency by 40% via UX optimization.</li>
               <li>Led a team of 10 across 5 countries.</li>
@@ -113,17 +113,17 @@ export default function Home() {
         id="projects"
         className="py-16 px-4 max-w-4xl mx-auto"
       >
-        <h2 className="text-3xl font-bold text-center mb-8">Projects</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8">Projects</h2>
         <div className="space-y-8">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold text-turquoise">Crossborder Marketplace</h3>
-            <p className="text-coral">Servicios Liverpool | 2022-2024</p>
-            <p className="mt-2">Led the development of a cross-border eCommerce platform, growing to over 100 sellers and boosting sales by 125%.</p>
+          <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md">
+            <h3 className="text-lg sm:text-xl font-semibold text-turquoise">Crossborder Marketplace</h3>
+            <p className="text-coral text-sm sm:text-base">Servicios Liverpool | 2022-2024</p>
+            <p className="mt-2 text-sm sm:text-base">Led the development of a cross-border eCommerce platform, growing to over 100 sellers and boosting sales by 125%.</p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold text-turquoise">Sebiche Portfolio</h3>
-            <p className="text-coral">Personal Project | 2025</p>
-            <p className="mt-2">Built a modern portfolio using Next.js and Tailwind CSS to showcase my professional journey.</p>
+          <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md">
+            <h3 className="text-lg sm:text-xl font-semibold text-turquoise">Sebiche Portfolio</h3>
+            <p className="text-coral text-sm sm:text-base">Personal Project | 2025</p>
+            <p className="mt-2 text-sm sm:text-base">Built a modern portfolio using Next.js and Tailwind CSS to showcase my professional journey.</p>
           </div>
         </div>
       </motion.section>
@@ -135,10 +135,10 @@ export default function Home() {
         id="contact"
         className="py-16 px-4 bg-charcoal text-white text-center"
       >
-        <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
-        <p className="text-lg mb-4">Email: sebas.napuri@gmail.com</p>
-        <p className="text-lg mb-4">Phone: +1 (469) 435-4914</p>
-        <div className="flex justify-center gap-4">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-6">Get in Touch</h2>
+        <p className="text-base sm:text-lg mb-4">Email: sebas.napuri@gmail.com</p>
+        <p className="text-base sm:text-lg mb-4">Phone: +1 (469) 435-4914</p>
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a href="#" className="text-turquoise hover:text-coral">LinkedIn</a>
           <a href="#" className="text-turquoise hover:text-coral">GitHub</a>
         </div>
