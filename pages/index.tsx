@@ -1,7 +1,33 @@
 import Head from 'next/head';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 export default function Home() {
+  const [currentProject, setCurrentProject] = useState(0);
+
+  const projects = [
+    {
+      title: 'Crossborder Marketplace',
+      company: 'Servicios Liverpool',
+      date: '2022-2024',
+      description: 'Led the development of a cross-border eCommerce platform, growing to over 100 sellers and boosting sales by 125%.',
+    },
+    {
+      title: 'Sebiche Portfolio',
+      company: 'Personal Project',
+      date: '2025',
+      description: 'Built a modern portfolio using Next.js and Tailwind CSS to showcase my professional journey.',
+    },
+  ];
+
+  const handleNext = () => {
+    setCurrentProject((prev) => (prev + 1) % projects.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length);
+  };
+
   return (
     <div>
       <Head>
@@ -114,17 +140,39 @@ export default function Home() {
         className="py-16 px-4 max-w-4xl mx-auto"
       >
         <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8">Projects</h2>
-        <div className="space-y-8">
-          <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md">
-            <h3 className="text-lg sm:text-xl font-semibold text-turquoise">Crossborder Marketplace</h3>
-            <p className="text-coral text-sm sm:text-base">Servicios Liverpool | 2022-2024</p>
-            <p className="mt-2 text-sm sm:text-base">Led the development of a cross-border eCommerce platform, growing to over 100 sellers and boosting sales by 125%.</p>
-          </div>
-          <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md">
-            <h3 className="text-lg sm:text-xl font-semibold text-turquoise">Sebiche Portfolio</h3>
-            <p className="text-coral text-sm sm:text-base">Personal Project | 2025</p>
-            <p className="mt-2 text-sm sm:text-base">Built a modern portfolio using Next.js and Tailwind CSS to showcase my professional journey.</p>
-          </div>
+        <div className="relative">
+          <motion.div
+            key={currentProject}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.5 }}
+            className="bg-white p-4 sm:p-6 rounded-lg shadow-md"
+          >
+            <h3 className="text-lg sm:text-xl font-semibold text-turquoise">{projects[currentProject].title}</h3>
+            <p className="text-coral text-sm sm:text-base">{projects[currentProject].company} | {projects[currentProject].date}</p>
+            <p className="mt-2 text-sm sm:text-base">{projects[currentProject].description}</p>
+          </motion.div>
+          <button
+            onClick={handlePrev}
+            className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-turquoise text-white p-2 rounded-full hover:bg-coral transition"
+          >
+            ←
+          </button>
+          <button
+            onClick={handleNext}
+            className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-turquoise text-white p-2 rounded-full hover:bg-coral transition"
+          >
+            →
+          </button>
+        </div>
+        <div className="flex justify-center gap-2 mt-4">
+          {projects.map((_, index) => (
+            <span
+              key={index}
+              className={`h-2 w-2 rounded-full ${index === currentProject ? 'bg-turquoise' : 'bg-gray-300'}`}
+            />
+          ))}
         </div>
       </motion.section>
 
