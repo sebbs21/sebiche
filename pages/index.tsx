@@ -10,6 +10,17 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet" />
       </Head>
 
+      <header className="fixed top-0 left-0 right-0 bg-charcoal/80 backdrop-blur-md text-white py-4 px-4 z-10">
+        <nav className="max-w-4xl mx-auto flex justify-between">
+          <a href="/" className="text-turquoise font-bold">Sebiche</a>
+          <div className="space-x-4">
+            <a href="#about" className="hover:text-coral">About</a>
+            <a href="#experience" className="hover:text-coral">Experience</a>
+            <a href="#contact" className="hover:text-coral">Contact</a>
+          </div>
+        </nav>
+      </header>
+
       <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-turquoise to-coral text-white text-center px-4">
         <div>
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Sebastian Napuri Mendoza</h1>
