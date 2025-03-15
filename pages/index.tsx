@@ -138,11 +138,20 @@ export default function Home() {
         <h2 className="text-2xl sm:text-3xl font-bold mb-6">Get in Touch</h2>
         <p className="text-base sm:text-lg mb-4">Email: sebas.napuri@gmail.com</p>
         <p className="text-base sm:text-lg mb-4">Phone: +1 (469) 435-4914</p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
+      </motion.section>
+
+      <motion.footer
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1 }}
+        className="bg-charcoal text-white py-4 text-center"
+      >
+        <p className="text-sm sm:text-base">&copy; 2025 Sebastian Napuri Mendoza. All rights reserved.</p>
+        <div className="flex justify-center gap-4 mt-2">
           <a href="#" className="text-turquoise hover:text-coral">LinkedIn</a>
           <a href="#" className="text-turquoise hover:text-coral">GitHub</a>
         </div>
-      </motion.section>
+      </motion.footer>
     </div>
   );
 }
