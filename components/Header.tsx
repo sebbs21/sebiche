@@ -17,10 +17,23 @@ export default function Header() {
     >
       <nav className="max-w-4xl mx-auto flex justify-between items-center" role="navigation" aria-label="Main navigation">
         <a href="/" className="flex items-baseline space-x-2">
-          <motion.div whileHover={{ rotate: 360, scale: 1.2 }} transition={{ duration: 0.5 }}>
-            <Image src="/logo.svg" alt="Sebiche Logo" width={32} height={32} aria-hidden="true" />
+          <motion.div
+            whileHover={{ rotate: 360, scale: 1.2 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-baseline"
+          >
+            <Image
+              src="/logo.svg"
+              alt="Sebiche Logo"
+              width={32}
+              height={32}
+              aria-hidden="true"
+              className="align-baseline"
+            />
           </motion.div>
-          <span className="text-turquoise font-['Montserrat'] text-2xl font-bold tracking-tight">Sebiche</span>
+          <span className="text-turquoise font-['Montserrat'] text-2xl font-bold tracking-tight align-baseline">
+            Sebiche
+          </span>
         </a>
         <div className="flex items-center">
           <div className="hidden sm:flex space-x-4 items-center">

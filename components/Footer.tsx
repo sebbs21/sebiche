@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="bg-charcoal text-white py-6 text-center">
       <div className="max-w-4xl mx-auto flex flex-col items-center space-y-4">
         <p className="text-sm">© 2025 Sebastian Napuri Mendoza. All rights reserved.</p>
-        <div className="flex space-x-6">
+        <div className="flex space-x-8">
           <a
             href="https://www.linkedin.com/in/sebastiannapuri/"
             target="_blank"
@@ -13,8 +13,8 @@ export default function Footer() {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
+              width="32"
+              height="32"
               viewBox="0 0 24 24"
               fill="currentColor"
             >
@@ -22,7 +22,7 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href="https://www.instagram.com/sebasnapuri/"
+            href="https://www.instagram.com/soysebiche/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Visit Sebastian's Instagram profile"
@@ -30,8 +30,8 @@ export default function Footer() {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
+              width="32"
+              height="32"
               viewBox="0 0 24 24"
               fill="currentColor"
             >
