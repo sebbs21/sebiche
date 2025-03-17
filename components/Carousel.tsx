@@ -66,6 +66,8 @@ export default function Carousel() {
           <button
             onClick={handlePrev}
             className="flex-shrink-0 bg-turquoise text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-coral transition mr-4 z-10"
+            aria-label="Previous project"
+            role="button"
           >
             ←
           </button>
@@ -77,6 +79,8 @@ export default function Carousel() {
             transition={{ duration: 0.3 }}
             onClick={openModal}
             className="bg-white p-4 sm:p-6 rounded-lg shadow-md flex-1 max-w-lg cursor-pointer"
+            role="button"
+            aria-label={`View details of ${projects[currentProject].title}`}
           >
             <h3 className="text-lg sm:text-xl font-semibold text-turquoise">{projects[currentProject].title}</h3>
             <p className="text-coral text-sm sm:text-base">{projects[currentProject].company} | {projects[currentProject].date}</p>
@@ -85,6 +89,8 @@ export default function Carousel() {
           <button
             onClick={handleNext}
             className="flex-shrink-0 bg-turquoise text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-coral transition ml-4 z-10"
+            aria-label="Next project"
+            role="button"
           >
             →
           </button>
@@ -106,6 +112,9 @@ export default function Carousel() {
           exit={{ opacity: 0 }}
           className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
           onClick={closeModal}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Project details"
         >
           <motion.div
             initial={{ scale: 0.8 }}
@@ -121,6 +130,8 @@ export default function Carousel() {
             <button
               onClick={closeModal}
               className="mt-4 px-4 py-2 bg-turquoise text-white rounded-full hover:bg-coral transition"
+              aria-label="Close project details"
+              role="button"
             >
               Close
             </button>

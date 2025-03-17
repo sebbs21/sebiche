@@ -18,7 +18,9 @@ export default function Header() {
     >
       <nav className="max-w-4xl mx-auto flex justify-between items-center" role="navigation" aria-label="Main navigation">
         <a href="/" className="flex items-center space-x-1">
-          <Image src="/logo.svg" alt="Sebiche Logo" width={32} height={32} aria-hidden="true" />
+          <motion.div whileHover={{ rotate: 360, scale: 1.2 }} transition={{ duration: 0.5 }}>
+            <Image src="/logo.svg" alt="Sebiche Logo" width={32} height={32} aria-hidden="true" />
+          </motion.div>
           <span className="text-turquoise font-['Montserrat'] text-2xl font-bold tracking-tight">Sebiche</span>
         </a>
         <div className="flex items-center">
@@ -33,6 +35,7 @@ export default function Header() {
             onClick={toggleMenu}
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isMenuOpen}
+            role="button"
           >
             {isMenuOpen ? '✕' : '☰'}
           </button>
