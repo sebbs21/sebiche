@@ -12,4 +12,7 @@ export default function Footer() {
       <div className="flex justify-center gap-4 mt-2">
         <a href="https://www.linkedin.com/in/snapurimendoza/" target="_blank" rel="noopener noreferrer" className="text-turquoise hover:text-coral">LinkedIn</a>
         <a href="https://www.instagram.com/soysebiche" target="_blank" rel="noopener noreferrer" className="text-turquoise hover:text-coral">Instagram</a>
-      </div
+      </div>
+    </motion.footer>
+  );
+}
