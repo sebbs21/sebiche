@@ -20,8 +20,8 @@ export default function Home() {
       <Header />
       <Hero />
       <Section id="about" title="About Me">
-        <div className="w-32 sm:w-48 h-32 sm:h-48 mx-auto mb-4 rounded-full overflow-hidden">
-          <Image src="/sebastian.jpg" alt="Sebastian Napuri" width={192} height={192} className="object-cover" />
+        <div className="w-40 h-40 sm:w-56 sm:h-56 mx-auto mb-4 rounded-full overflow-hidden">
+          <Image src="/sebastian.jpg" alt="Sebastian Napuri" width={224} height={224} className="object-cover w-full h-full" />
         </div>
         <p className="text-base sm:text-lg mb-4">
           I’m a UX/UI leader with over 9 years of experience transforming eCommerce marketplaces and driving sustainable innovation.
@@ -38,18 +38,28 @@ export default function Home() {
           <div className="relative border-l-2 border-turquoise pl-6">
             <div className="mb-6">
               <div className="absolute w-4 h-4 bg-turquoise rounded-full -left-2 top-1"></div>
-              <p className="text-sm sm:text-base text-coral">2016</p>
-              <p className="text-base sm:text-lg">Started my UX career, designing my first eCommerce flow.</p>
+              <p className="text-sm sm:text-base text-coral">2015</p>
+              <p className="text-base sm:text-lg">Started as an Intern at Linio Peru.</p>
+            </div>
+            <div className="mb-6">
+              <div className="absolute w-4 h-4 bg-turquoise rounded-full -left-2 top-1"></div>
+              <p className="text-sm sm:text-base text-coral">2018</p>
+              <p className="text-base sm:text-lg">Graduated with a BBA from Universidad del Pacífico.</p>
+            </div>
+            <div className="mb-6">
+              <div className="absolute w-4 h-4 bg-turquoise rounded-full -left-2 top-1"></div>
+              <p className="text-sm sm:text-base text-coral">2020</p>
+              <p className="text-base sm:text-lg">Started as Manager at Linio Mexico.</p>
             </div>
             <div className="mb-6">
               <div className="absolute w-4 h-4 bg-turquoise rounded-full -left-2 top-1"></div>
               <p className="text-sm sm:text-base text-coral">2022</p>
-              <p className="text-base sm:text-lg">Led cross-border sales growth by 125% at Servicios Liverpool.</p>
+              <p className="text-base sm:text-lg">Started as Manager at Liverpool.</p>
             </div>
             <div>
               <div className="absolute w-4 h-4 bg-turquoise rounded-full -left-2 top-1"></div>
-              <p className="text-sm sm:text-base text-coral">2025</p>
-              <p className="text-base sm:text-lg">Building this portfolio to showcase my expertise.</p>
+              <p className="text-sm sm:text-base text-coral">2024</p>
+              <p className="text-base sm:text-lg">Began the MADI program at SMU.</p>
             </div>
           </div>
         </div>

@@ -17,8 +17,8 @@ export default function Header() {
       className="fixed top-0 left-0 right-0 bg-charcoal/80 backdrop-blur-md text-white py-4 px-4 z-20"
     >
       <nav className="max-w-4xl mx-auto flex justify-between items-center">
-        <a href="/" className="flex items-center space-x-2">
-          <Image src="/logo.svg" alt="Sebiche Logo" width={40} height={40} />
+        <a href="/" className="flex items-center space-x-1">
+          <Image src="/logo.svg" alt="Sebiche Logo" width={32} height={32} />
           <span className="text-turquoise font-['Montserrat'] text-2xl font-bold tracking-tight">Sebiche</span>
         </a>
         <div className="flex items-center">
