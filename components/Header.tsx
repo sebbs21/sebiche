@@ -1,3 +1,4 @@
+'use client'; // Necesario por useState en Next.js 15 App Router
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Image from 'next/image';
@@ -5,9 +6,7 @@ import Image from 'next/image';
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   return (
     <motion.header
@@ -35,7 +34,6 @@ export default function Header() {
             onClick={toggleMenu}
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isMenuOpen}
-            role="button"
           >
             {isMenuOpen ? '✕' : '☰'}
           </button>

@@ -1,18 +1,45 @@
-import { motion } from 'framer-motion';
-
 export default function Footer() {
   return (
-    <motion.footer
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 1 }}
-      className="bg-charcoal text-white py-4 text-center"
-    >
-      <p className="text-sm sm:text-base">© 2025 Sebastian Napuri Mendoza. All rights reserved.</p>
-      <div className="flex justify-center gap-4 mt-2">
-        <a href="https://www.linkedin.com/in/snapurimendoza/" target="_blank" rel="noopener noreferrer" className="text-turquoise hover:text-coral">LinkedIn</a>
-        <a href="https://www.instagram.com/soysebiche" target="_blank" rel="noopener noreferrer" className="text-turquoise hover:text-coral">Instagram</a>
+    <footer className="bg-charcoal text-white py-6 text-center">
+      <div className="max-w-4xl mx-auto flex flex-col items-center space-y-4">
+        <p className="text-sm">© 2025 Sebastian Napuri Mendoza. All rights reserved.</p>
+        <div className="flex space-x-6">
+          <a
+            href="https://www.linkedin.com/in/sebastiannapuri/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit Sebastian's LinkedIn profile"
+            className="text-turquoise hover:text-coral transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-1.337-.027-3.063-1.866-3.063-1.867 0-2.154 1.459-2.154 2.966v5.701h-3v-11h2.881v1.512h.041c.4-.758 1.378-1.556 2.835-1.556 3.029 0 3.587 1.995 3.587 4.589v6.455z" />
+            </svg>
+          </a>
+          <a
+            href="https://www.instagram.com/sebasnapuri/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit Sebastian's Instagram profile"
+            className="text-turquoise hover:text-coral transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.326 3.608 1.301.975.975 1.24 2.242 1.301 3.608.058 1.265.069 1.645.069 4.849 0 1.366-.062 2.633-.326 3.608-1.301.975-.975 1.24-2.242 1.301-3.608.058-1.265.069-1.645.069-4.849s-.012-3.584-.07-4.85c-.062-1.366-.326-2.633-1.301-3.608-.975-.975-2.242-1.24-3.608-1.301-1.265-.058-1.645-.069-4.849-.069s-3.584.012-4.85.07c-1.366.062-2.633.326-3.608 1.301-.975.975-1.24 2.242-1.301 3.608-.058 1.265-.069 1.645-.069 4.849s.012 3.584.07 4.85c.062 1.366.326 2.633 1.301 3.608.975.975 2.242 1.24 3.608 1.301 1.265.058 1.645.069 4.849.069zm0-2.163c-3.259 0-3.667.014-4.947.072-1.453.066-2.758.385-3.775 1.402s-1.336 2.322-1.402 3.775c-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.066 1.453.385 2.758 1.402 3.775s2.322 1.336 3.775 1.402c1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.453-.066 2.758-.385 3.775-1.402s1.336-2.322 1.402-3.775c.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.066-1.453-.385-2.758-1.402-3.775s-2.322-1.336-3.775-1.402c-1.28-.058-1.688-.072-4.947-.072zm0 5.838c-3.314 0-6 2.686-6 6s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6zm0 9.834c-2.07 0-3.834-1.764-3.834-3.834s1.764-3.834 3.834-3.834 3.834 1.764 3.834 3.834-1.764 3.834-3.834 3.834zm6.104-10.896c-.78 0-1.416.636-1.416 1.416s.636 1.416 1.416 1.416 1.416-.636 1.416-1.416-.636-1.416-1.416-1.416z" />
+            </svg>
+          </a>
+        </div>
       </div>
-    </motion.footer>
+    </footer>
   );
 }

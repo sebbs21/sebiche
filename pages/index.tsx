@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
+import Script from 'next/script';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
@@ -7,16 +8,21 @@ import Footer from '../components/Footer';
 import Image from 'next/image';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import confetti from 'canvas-confetti';
 
 const Carousel = dynamic(() => import('../components/Carousel'), { ssr: false });
 const ContactForm = dynamic(() => import('../components/ContactForm'), { ssr: false });
+
+interface JourneyItem {
+  year: string;
+  title: string;
+  details: string;
+}
 
 export default function Home({ title, description }: { title: string; description: string }) {
   const [selectedYear, setSelectedYear] = useState<string | null>(null);
   const [surprise, setSurprise] = useState<string | null>(null);
 
-  const journey = [
+  const journey: JourneyItem[] = [
     {
       year: '2015',
       title: 'Started as an Intern at Linio Peru',
@@ -44,7 +50,7 @@ export default function Home({ title, description }: { title: string; descriptio
     },
   ];
 
-  const surprises = [
+  const surprises: string[] = [
     'I once redesigned a checkout flow in 48 hours!',
     'I’m obsessed with ceviche—hence the name Sebiche.',
     'I’ve led teams across 5 countries!',
@@ -55,7 +61,7 @@ export default function Home({ title, description }: { title: string; descriptio
   const showSurprise = () => {
     const randomSurprise = surprises[Math.floor(Math.random() * surprises.length)];
     setSurprise(randomSurprise);
-    confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+    window.confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
     setTimeout(() => setSurprise(null), 3000);
   };
   const getLineHeight = () => {
@@ -101,7 +107,7 @@ export default function Home({ title, description }: { title: string; descriptio
             alt="Sebastian Napuri Mendoza, UX/UI Leader"
             width={224}
             height={224}
-            className="object-cover w-full h-full"
+            className="object-cover"
             loading="lazy"
             sizes="(max-width: 640px) 160px, 224px"
           />
@@ -197,6 +203,10 @@ export default function Home({ title, description }: { title: string; descriptio
       <Carousel />
       <ContactForm />
       <Footer />
+      <Script
+        src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"
+        strategy="lazyOnload"
+      />
     </div>
   );
 }
