@@ -7,9 +7,11 @@ import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
 import Image from 'next/image';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   const [selectedYear, setSelectedYear] = useState<string | null>(null);
+  const [surprise, setSurprise] = useState<string | null>(null);
 
   const journey = [
     {
@@ -39,8 +41,27 @@ export default function Home() {
     },
   ];
 
+  const surprises = [
+    'I once redesigned a checkout flow in 48 hours!',
+    'I’m obsessed with ceviche—hence the name Sebiche.',
+    'I’ve led teams across 5 countries!',
+    'I boosted sales by 125% with a single UX tweak.',
+  ];
+
   const toggleDetails = (year: string) => {
     setSelectedYear(selectedYear === year ? null : year);
+  };
+
+  const showSurprise = () => {
+    const randomSurprise = surprises[Math.floor(Math.random() * surprises.length)];
+    setSurprise(randomSurprise);
+    setTimeout(() => setSurprise(null), 3000);
+  };
+
+  const getLineHeight = () => {
+    if (!selectedYear) return '0%';
+    const index = journey.findIndex((item) => item.year === selectedYear);
+    return `${(index + 1) * 20}%`; // 20% por hito, ajustable
   };
 
   return (
@@ -68,16 +89,49 @@ export default function Home() {
           From boosting cross-border sales by 125% to redesigning user experiences that convert 78% better, I blend design, data, and strategy to create scalable impact.
         </p>
         <p className="text-coral italic text-base sm:text-lg mb-6">“Inspired by my Peruvian roots, I build tech with purpose.”</p>
+        <button
+          onClick={showSurprise}
+          className="mx-auto block px-6 py-2 bg-turquoise text-white rounded-full hover:bg-coral transition mb-6"
+        >
+          Surprise Me!
+        </button>
+        {surprise && (
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="text-base sm:text-lg text-turquoise mb-6"
+          >
+            {surprise}
+          </motion.p>
+        )}
         <div className="max-w-2xl mx-auto">
           <h3 className="text-lg sm:text-xl font-semibold text-turquoise mb-4">My Journey</h3>
-          <div className="relative border-l-2 border-turquoise pl-6">
+          <div className="relative pl-6">
+            <motion.div
+              className="absolute left-0 top-0 w-0.5 bg-turquoise"
+              initial={{ height: '0%' }}
+              animate={{ height: getLineHeight() }}
+              transition={{ duration: 0.5, ease: 'easeInOut' }}
+            />
             {journey.map((item) => (
               <div key={item.year} className="mb-6 cursor-pointer" onClick={() => toggleDetails(item.year)}>
-                <div className="absolute w-4 h-4 bg-turquoise rounded-full -left-2 top-1 transition-all duration-300 hover:w-5 hover:h-5"></div>
+                <motion.div
+                  className="absolute w-4 h-4 bg-turquoise rounded-full -left-2 top-1"
+                  animate={{ scale: selectedYear === item.year ? 1.5 : 1 }}
+                  transition={{ duration: 0.3 }}
+                />
                 <p className="text-sm sm:text-base text-coral">{item.year}</p>
                 <p className="text-base sm:text-lg">{item.title}</p>
                 {selectedYear === item.year && (
-                  <p className="text-sm sm:text-base text-gray-600 mt-2">{item.details}</p>
+                  <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="text-sm sm:text-base text-gray-600 mt-2"
+                  >
+                    {item.details}
+                  </motion.p>
                 )}
               </div>
             ))}
