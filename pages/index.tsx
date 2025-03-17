@@ -61,15 +61,23 @@ export default function Home() {
   const getLineHeight = () => {
     if (!selectedYear) return '0%';
     const index = journey.findIndex((item) => item.year === selectedYear);
-    return `${(index + 1) * 20}%`; // 20% por hito, ajustable
+    return `${(index + 1) * 20}%`;
   };
 
   return (
     <div className="min-h-screen bg-softGray">
       <Head>
         <title>Sebastian Napuri Mendoza | Portfolio</title>
-        <meta name="description" content="Professional portfolio of Sebastian Napuri Mendoza" />
+        <meta name="description" content="UX/UI leader with 9+ years in eCommerce innovation." />
+        <meta name="keywords" content="Sebastian Napuri, UX, UI, eCommerce, portfolio, Peru" />
+        <meta name="author" content="Sebastian Napuri Mendoza" />
+        <meta property="og:title" content="Sebastian Napuri Mendoza | Portfolio" />
+        <meta property="og:description" content="Explore my work in UX/UI and eCommerce innovation." />
+        <meta property="og:image" content="/sebastian.jpg" />
+        <meta property="og:url" content="https://sebiche.vercel.app" />
+        <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@700&display=swap" as="style" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet" />
       </Head>
 
@@ -77,7 +85,15 @@ export default function Home() {
       <Hero />
       <Section id="about" title="About Me">
         <div className="w-40 h-40 sm:w-56 sm:h-56 mx-auto mb-4 rounded-full overflow-hidden">
-          <Image src="/sebastian.jpg" alt="Sebastian Napuri" width={224} height={224} className="object-cover w-full h-full" />
+          <Image
+            src="/sebastian.jpg"
+            alt="Sebastian Napuri Mendoza, UX/UI Leader"
+            width={224}
+            height={224}
+            className="object-cover w-full h-full"
+            loading="lazy"
+            sizes="(max-width: 640px) 160px, 224px"
+          />
         </div>
         <p className="text-base sm:text-lg mb-4">
           I’m a UX/UI leader with over 9 years of experience transforming eCommerce marketplaces and driving sustainable innovation.
@@ -92,6 +108,7 @@ export default function Home() {
         <button
           onClick={showSurprise}
           className="mx-auto block px-6 py-2 bg-turquoise text-white rounded-full hover:bg-coral transition mb-6"
+          aria-label="Reveal a fun fact about Sebastian"
         >
           Surprise Me!
         </button>
