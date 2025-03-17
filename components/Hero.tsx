@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import Particles from 'tsparticles';
+import Particles from 'react-tsparticles';  // Corregido de "tsparticles" a "react-tsparticles"
 
 export default function Hero() {
   return (
