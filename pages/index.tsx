@@ -6,8 +6,43 @@ import Carousel from '../components/Carousel';
 import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
 import Image from 'next/image';
+import { useState } from 'react';
 
 export default function Home() {
+  const [selectedYear, setSelectedYear] = useState<string | null>(null);
+
+  const journey = [
+    {
+      year: '2015',
+      title: 'Started as an Intern at Linio Peru',
+      details: 'Began my career in eCommerce, learning the ropes of UX and marketplace dynamics.',
+    },
+    {
+      year: '2018',
+      title: 'Graduated with a BBA from Universidad del Pacífico',
+      details: 'Earned my degree with a focus on business administration, fueling my passion for strategy.',
+    },
+    {
+      year: '2020',
+      title: 'Started as Manager at Linio Mexico',
+      details: 'Led regional teams to boost cross-border sales by 125% through UX optimization.',
+    },
+    {
+      year: '2022',
+      title: 'Started as Manager at Liverpool',
+      details: 'Grew the marketplace to 100+ sellers with a 78% increase in onboarding conversion.',
+    },
+    {
+      year: '2024',
+      title: 'Began the MADI program at SMU',
+      details: 'Pursuing advanced design and innovation skills to elevate my craft.',
+    },
+  ];
+
+  const toggleDetails = (year: string) => {
+    setSelectedYear(selectedYear === year ? null : year);
+  };
+
   return (
     <div className="min-h-screen bg-softGray">
       <Head>
@@ -36,31 +71,16 @@ export default function Home() {
         <div className="max-w-2xl mx-auto">
           <h3 className="text-lg sm:text-xl font-semibold text-turquoise mb-4">My Journey</h3>
           <div className="relative border-l-2 border-turquoise pl-6">
-            <div className="mb-6">
-              <div className="absolute w-4 h-4 bg-turquoise rounded-full -left-2 top-1"></div>
-              <p className="text-sm sm:text-base text-coral">2015</p>
-              <p className="text-base sm:text-lg">Started as an Intern at Linio Peru.</p>
-            </div>
-            <div className="mb-6">
-              <div className="absolute w-4 h-4 bg-turquoise rounded-full -left-2 top-1"></div>
-              <p className="text-sm sm:text-base text-coral">2018</p>
-              <p className="text-base sm:text-lg">Graduated with a BBA from Universidad del Pacífico.</p>
-            </div>
-            <div className="mb-6">
-              <div className="absolute w-4 h-4 bg-turquoise rounded-full -left-2 top-1"></div>
-              <p className="text-sm sm:text-base text-coral">2020</p>
-              <p className="text-base sm:text-lg">Started as Manager at Linio Mexico.</p>
-            </div>
-            <div className="mb-6">
-              <div className="absolute w-4 h-4 bg-turquoise rounded-full -left-2 top-1"></div>
-              <p className="text-sm sm:text-base text-coral">2022</p>
-              <p className="text-base sm:text-lg">Started as Manager at Liverpool.</p>
-            </div>
-            <div>
-              <div className="absolute w-4 h-4 bg-turquoise rounded-full -left-2 top-1"></div>
-              <p className="text-sm sm:text-base text-coral">2024</p>
-              <p className="text-base sm:text-lg">Began the MADI program at SMU.</p>
-            </div>
+            {journey.map((item) => (
+              <div key={item.year} className="mb-6 cursor-pointer" onClick={() => toggleDetails(item.year)}>
+                <div className="absolute w-4 h-4 bg-turquoise rounded-full -left-2 top-1 transition-all duration-300 hover:w-5 hover:h-5"></div>
+                <p className="text-sm sm:text-base text-coral">{item.year}</p>
+                <p className="text-base sm:text-lg">{item.title}</p>
+                {selectedYear === item.year && (
+                  <p className="text-sm sm:text-base text-gray-600 mt-2">{item.details}</p>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </Section>
