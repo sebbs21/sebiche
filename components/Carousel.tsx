@@ -45,13 +45,13 @@ export default function Carousel() {
                 <div className="bg-white rounded-lg shadow-md p-6">
                   <Image
                     src={project.image}
-                    alt={`${project.title} screenshot`}
-                    width={600}
+                    alt={`${project.title} logo`}
+                    width={400}
                     height={400}
-                    className="w-full h-64 object-cover rounded-md mb-4"
+                    className="w-full max-w-[400px] mx-auto object-contain rounded-md mb-4"
                     loading="lazy"
                   />
-                  <h3 className="text-xl font-semibold text-turquoise mb-2">{project.title}</h3>
+                  <h3 className="text-xl font-semibold text-turquoise mb-2 font-['Montserrat']">{project.title}</h3>
                   <p className="text-gray-600">{project.description}</p>
                 </div>
               </div>

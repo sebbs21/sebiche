@@ -1,4 +1,4 @@
-'use client'; // Necesario por useState en Next.js 15 App Router
+'use client';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Image from 'next/image';
@@ -16,7 +16,7 @@ export default function Header() {
       className="fixed top-0 left-0 right-0 bg-charcoal/80 backdrop-blur-md text-white py-4 px-4 z-20"
     >
       <nav className="max-w-4xl mx-auto flex justify-between items-center" role="navigation" aria-label="Main navigation">
-        <a href="/" className="flex items-center space-x-1">
+        <a href="/" className="flex items-baseline space-x-2">
           <motion.div whileHover={{ rotate: 360, scale: 1.2 }} transition={{ duration: 0.5 }}>
             <Image src="/logo.svg" alt="Sebiche Logo" width={32} height={32} aria-hidden="true" />
           </motion.div>
