@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import Particles from 'ts-particles';
+import Particles from 'tsparticles';
 
 export default function Hero() {
   return (
