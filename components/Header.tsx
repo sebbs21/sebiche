@@ -16,9 +16,9 @@ export default function Header() {
       transition={{ duration: 0.5 }}
       className="fixed top-0 left-0 right-0 bg-charcoal/80 backdrop-blur-md text-white py-4 px-4 z-20"
     >
-      <nav className="max-w-4xl mx-auto flex justify-between items-center">
+      <nav className="max-w-4xl mx-auto flex justify-between items-center" role="navigation" aria-label="Main navigation">
         <a href="/" className="flex items-center space-x-1">
-          <Image src="/logo.svg" alt="Sebiche Logo" width={32} height={32} />
+          <Image src="/logo.svg" alt="Sebiche Logo" width={32} height={32} aria-hidden="true" />
           <span className="text-turquoise font-['Montserrat'] text-2xl font-bold tracking-tight">Sebiche</span>
         </a>
         <div className="flex items-center">
@@ -29,9 +29,10 @@ export default function Header() {
             <a href="#contact" className="hover:text-coral">Contact</a>
           </div>
           <button
-            className="sm:hidden text-turquoise hover:text-coral focus:outline-none"
+            className="sm:hidden text-turquoise hover:text-coral focus:outline-none focus:ring-2 focus:ring-coral"
             onClick={toggleMenu}
-            aria-label="Toggle menu"
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? '✕' : '☰'}
           </button>
