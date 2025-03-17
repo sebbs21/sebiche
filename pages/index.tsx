@@ -27,9 +27,32 @@ export default function Home() {
           I’m a UX/UI leader with over 9 years of experience transforming eCommerce marketplaces and driving sustainable innovation.
         </p>
         <p className="text-base sm:text-lg mb-4">
+          My Peruvian heritage taught me to blend creativity and precision—skills I bring to every UX challenge.
+        </p>
+        <p className="text-base sm:text-lg mb-6">
           From boosting cross-border sales by 125% to redesigning user experiences that convert 78% better, I blend design, data, and strategy to create scalable impact.
         </p>
-        <p className="text-coral italic text-base sm:text-lg">“Inspired by my Peruvian roots, I build tech with purpose.”</p>
+        <p className="text-coral italic text-base sm:text-lg mb-6">“Inspired by my Peruvian roots, I build tech with purpose.”</p>
+        <div className="max-w-2xl mx-auto">
+          <h3 className="text-lg sm:text-xl font-semibold text-turquoise mb-4">My Journey</h3>
+          <div className="relative border-l-2 border-turquoise pl-6">
+            <div className="mb-6">
+              <div className="absolute w-4 h-4 bg-turquoise rounded-full -left-2 top-1"></div>
+              <p className="text-sm sm:text-base text-coral">2016</p>
+              <p className="text-base sm:text-lg">Started my UX career, designing my first eCommerce flow.</p>
+            </div>
+            <div className="mb-6">
+              <div className="absolute w-4 h-4 bg-turquoise rounded-full -left-2 top-1"></div>
+              <p className="text-sm sm:text-base text-coral">2022</p>
+              <p className="text-base sm:text-lg">Led cross-border sales growth by 125% at Servicios Liverpool.</p>
+            </div>
+            <div>
+              <div className="absolute w-4 h-4 bg-turquoise rounded-full -left-2 top-1"></div>
+              <p className="text-sm sm:text-base text-coral">2025</p>
+              <p className="text-base sm:text-lg">Building this portfolio to showcase my expertise.</p>
+            </div>
+          </div>
+        </div>
       </Section>
       <Section id="experience" title="Experience" delay={0.4}>
         <div className="space-y-8">

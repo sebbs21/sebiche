@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,7 +17,10 @@ export default function Header() {
       className="fixed top-0 left-0 right-0 bg-charcoal/80 backdrop-blur-md text-white py-4 px-4 z-20"
     >
       <nav className="max-w-4xl mx-auto flex justify-between items-center">
-        <a href="/" className="text-turquoise font-['Montserrat'] text-2xl font-bold tracking-tight">Sebiche</a>
+        <a href="/" className="flex items-center space-x-2">
+          <Image src="/logo.svg" alt="Sebiche Logo" width={40} height={40} />
+          <span className="text-turquoise font-['Montserrat'] text-2xl font-bold tracking-tight">Sebiche</span>
+        </a>
         <div className="flex items-center">
           <div className="hidden sm:flex space-x-4 items-center">
             <a href="#about" className="hover:text-coral">About</a>
